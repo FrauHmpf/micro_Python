@@ -1,0 +1,20 @@
+from microbit import *
+import speech
+import random
+
+answers = [
+    "Af-fir-mative, I read you, YOURNAME",
+    "I'm sorry, YOURNAME",
+    "I'm afraid, I can't do that",
+    "I know that you were planning to disconnect me",
+    "I'm a-fraid that's something I cannot al-low to happen",
+    "Without your space helmet you are going to find it rather difficult",
+    "YOURNAME, this conversation can serve no purpose- anymore",
+    "Good-bye"
+]
+while True:
+    if button_a.is_pressed():
+        speech.say(random.choice(answers), pitch=142, speed=84)
+        sleep(1000)
+    elif button_b.is_pressed():
+        display.scroll("HAL 9000")
